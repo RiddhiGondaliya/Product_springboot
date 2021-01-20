@@ -1,0 +1,61 @@
+package com.example.Product;
+
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+
+    private Long id;
+    private String productName;
+    private String city;
+    private int modelNumber;
+    private float productPrice;
+
+
+    protected Product() {
+
+    }
+
+    public Product(String productName, String city, int modelNumber, float productPrice) {
+        this.productName = productName;
+        this.city = city;
+        this.modelNumber = modelNumber;
+        this.productPrice = productPrice;
+
+    }
+
+    public String toString() {
+        return String.format("Product[id = %d, productName = '%s', city = '%s',modelNumber = %d, productPrice = %f]", id, productName, city, modelNumber, productPrice);
+
+    }
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public int getModelNumber() {
+        return modelNumber;
+    }
+
+    public float getProductPrice() {
+        return productPrice;
+    }
+
+
+}
